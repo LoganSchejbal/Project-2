@@ -1,5 +1,11 @@
-#include "Shapes.h"
 #include <cmath>
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+#include "Shapes.h"
+
+
 
 // BasicShape :
 void BasicShape::setArea(double a) {
