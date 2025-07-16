@@ -1,3 +1,10 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+#include "Shapes.h"
+
+
 int main() {
     string path = "/Users/josephmirza/Desktop/output.txt"; // Prints output to my desktop
     ofstream outFile(path);
