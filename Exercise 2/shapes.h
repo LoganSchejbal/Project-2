@@ -30,6 +30,7 @@ public:
     long getCenterX() const;
     long getCenterY() const;
     void calcArea() override;
+
 };
 
 class Rectangle : public BasicShape {
