@@ -23,13 +23,15 @@ class employee{
     void setEducation(string);
 };
 
-class worker : employee {
+class worker : public employee {
     private:
     string hiringDate;
     string dept;
     float rate;
 
     public:
+    worker();
+    worker(int, string, double, string, string, string, float);
     string getHiringDate();
     void setHiringDate(int, int, int);
     string getDept();
@@ -47,6 +49,8 @@ class manager : employee {
     float salary;
 
     public:
+    manager();
+    manager(int, string, double, string, string, string, string, float);
     string getPromoDate();
     void setPromoDate(string);
     string getDept();
