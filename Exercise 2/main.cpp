@@ -11,6 +11,7 @@ int main() {
     if (!outFile) {
         cerr << "Failed to open file at: " << path << endl;
         return 1;
+        
     }
 
     Circle circle(5, 10, 7.5); // Circle Object
