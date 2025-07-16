@@ -16,7 +16,7 @@ double BasicShape::getArea() const {
     return area;
 }
 
-// Circle:
+// Circle Constructor:
 Circle::Circle(long x, long y, double r) {
     centerX = x;
     centerY = y;
@@ -37,7 +37,7 @@ void Circle::calcArea() {
     setArea(a);
 }
 
-// Rectangle
+// Rectangle Constructor
 Rectangle::Rectangle(long w, long l) {
     width = w;
     length = l;
