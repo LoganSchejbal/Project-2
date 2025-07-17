@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
+#include "workers.cpp"
 using namespace std;
 
-int workerCount;
-int managerCount;
+int workerCount = 0;
+int managerCount = 0;
+manager man1, man2, man3;
 
 void workerMenu(){
     char input;
@@ -39,17 +41,43 @@ void managerMenu(){
         cin >> input;
 
         if (input == 'n'){
-            if (managerCount == 0){
-                
-            }
-            else if (managerCount == 1){
+            if (managerCount <= 2){
+                int ID, month, day, year = 0;
+                string first, last, education, dept, date, name, title = "";
+                double age = 0;
+                float salary = 0;
 
-            }
-            else if (managerCount == 2){
+                cout << "Employee ID: " << endl;
+                cin >> ID;
+                cout << "Employee Name (First Last): " << endl;
+                cin >> first >> last;
+                cout << "Age: " << endl;
+                cin >> age;
+                cout << "Education (Abbreviation, ie MD or HS): " << endl;
+                cin >> education;
+                cout << "Date Promoted (MM DD YYYY): " << endl;
+                cin >> month >> day >> year;
+                cout << "Department: " << endl;
+                cin >> dept;
+                cout << "Title: " << endl;
+                cin >> title;
+                cout << "Salary: " << endl;
+                cin >> salary;
 
-            }
-            else if (managerCount == 3){
+                name = first + " " + last;
+                date = to_string(month) + "/" + to_string(day) + "/" + to_string(year);
 
+                manager tempMan(ID, name, age, education, date, dept, title, salary);
+                if (managerCount == 0){
+                    man1 = tempMan;
+                }
+                else if (managerCount == 1){
+                    man2 = tempMan;
+                }
+                else if (managerCount == 2){
+                    man3 = tempMan;
+                }
+                ++managerCount;
             } 
             else{
                 cout << "Maximum number of managers reached. Returning to previous page.\n" <<endl;
@@ -57,7 +85,7 @@ void managerMenu(){
         }
         else if (input == 'v'){
             if(managerCount == 0){
-                cout << "No manager has been added. Please add a new manager to view data."
+                cout << "No manager has been added. Please add a new manager to view data." << endl;
             }
             else if (managerCount == 1){
                 string Manager1 = man1.getName();
@@ -66,11 +94,22 @@ void managerMenu(){
                 man1.displayInfo();
             }
             else if (managerCount == 2){
+                int input;
                 string Manager1 = man1.getName();
                 string Manager2 = man2.getName();
                 cout << "Please select a manager: \n"
                     << "1. " << Manager1
                     << "2. " << Manager2;
+                cin >> input;
+                if (input = '1'){
+                    man1.displayInfo();
+                }
+                else if (input = '2'){
+                    man2.displayInfo();
+                }
+                else{
+                    cout << "Error, unknown Input" << endl;
+                }
             }
             else if (managerCount == 3){
                 string Manager1 = man1.getName();
@@ -80,17 +119,19 @@ void managerMenu(){
                     << "1. " << Manager1
                     << "2. " << Manager2
                     << "3. " << Manager3;
-            }
-            else if (managerCount == 4){
-                string Manager1 = man1.getName();
-                string Manager2 = man2.getName();
-                string Manager3 = man3.getName();
-                string Manager4 = man4.getName();
-                cout << "Please select a manager: \n"
-                    << "1. " << Manager1
-                    << "2. " << Manager2
-                    << "3. " << Manager3
-                    << "4. " << Manager4;
+                cin >> input;
+                if (input = '1'){
+                    man1.displayInfo();
+                }
+                else if (input = '2'){
+                    man2.displayInfo();
+                }
+                else if (input == '3'){
+                    man3.displayInfo();
+                }
+                else{
+                    cout << "Error, unknown Input" << endl;
+                }
             }
             else{
                 cout <<"A fatal error has occured. Exiting the program";

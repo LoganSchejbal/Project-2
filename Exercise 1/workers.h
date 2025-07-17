@@ -41,7 +41,7 @@ class worker : public employee {
     void displayInfo();
 };
 
-class manager : employee {
+class manager : public employee {
     private:
     string promoDate;
     string dept;
