@@ -8,17 +8,20 @@ class employee{
     int ID;
     string name;
     double age;
+    char gender;
     string education;
 
     public:
     employee();
-    employee(int, string, double, string);
+    employee(int, string, double, char, string);
     int getID();
     void setID(int);
     string getName();
     void setName(string);
     double getAge();
     void setAge(double);
+    char getGender();
+    void setGender(char);
     string getEducation();
     void setEducation(string);
 };
@@ -31,7 +34,7 @@ class worker : public employee {
 
     public:
     worker();
-    worker(int, string, double, string, string, string, float);
+    worker(int, string, double, char, string, string, string, float);
     string getHiringDate();
     void setHiringDate(int, int, int);
     string getDept();
@@ -50,7 +53,7 @@ class manager : public employee {
 
     public:
     manager();
-    manager(int, string, double, string, string, string, string, float);
+    manager(int, string, double, char, string, string, string, string, float);
     string getPromoDate();
     void setPromoDate(string);
     string getDept();

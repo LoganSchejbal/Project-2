@@ -7,10 +7,11 @@ using namespace std;
 employee::employee(){
 
 }
-employee::employee(int tempID, string tempName, double tempAge, string tempEdu){
+employee::employee(int tempID, string tempName, double tempAge, char tempGender, string tempEdu){
     ID = tempID;
     name = tempName;
     age = tempAge;
+    gender = tempGender;
     education = tempEdu;
 }
 int employee::getID(){
@@ -34,6 +35,13 @@ void employee::setAge(double tempAge){
     age = tempAge;
     return;
 }
+char employee::getGender(){
+    return gender;
+}
+void employee::setGender(char tempGender){
+    gender = tempGender;
+    return;
+}
 string employee::getEducation(){
     return education;
 }
@@ -46,7 +54,7 @@ void employee::setEducation(string tempEdu){
 worker::worker() : employee(){
 
 }
-worker::worker(int tempID, string tempName, double tempAge, string tempEdu, string tempDate, string tempDept, float tempRate) : employee(tempID, tempName, tempAge, tempEdu){
+worker::worker(int tempID, string tempName, double tempAge, char tempGender, string tempEdu, string tempDate, string tempDept, float tempRate) : employee(tempID, tempName, tempAge, tempGender, tempEdu){
     hiringDate = tempDate;
     dept = tempDept;
     rate = tempRate;
@@ -77,6 +85,7 @@ void worker::displayInfo(){
     cout << "Employee ID: " << getID() 
         << "\nName: " << getName()
         << "\nAge: " << getAge()
+        << "\nGender: " << getGender()
         << "\nEducation: " << getEducation()
         << "\nDate Hired: " << getHiringDate()
         << "\nDepartment: " << getDept()
@@ -88,7 +97,7 @@ void worker::displayInfo(){
 manager::manager() : employee(){
 
 }
-manager::manager(int tempID, string tempName, double tempAge, string tempEdu, string tempDate, string tempDept, string tempTitle, float tempSalary) : employee(tempID, tempName, tempAge, tempEdu){
+manager::manager(int tempID, string tempName, double tempAge, char tempGender, string tempEdu, string tempDate, string tempDept, string tempTitle, float tempSalary) : employee(tempID, tempName, tempAge, tempGender, tempEdu){
     promoDate = tempDate;
     dept = tempDept;
     title = tempTitle;
@@ -127,6 +136,7 @@ void manager::displayInfo(){
         cout << "Employee ID: " << getID() 
         << "\nName: " << getName()
         << "\nAge: " << getAge()
+        << "\nGender: " << getGender()
         << "\nEducation: " << getEducation()
         << "\nDate Promoted: " << getPromoDate()
         << "\nDepartment: " << getDept()
