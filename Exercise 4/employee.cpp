@@ -1,4 +1,4 @@
-#include "Employee.h" // Includes all class declarations
+#include "employee.h" // Includes all class declarations
 #include <iostream>   // For input/output operations
 
 // Initialize the static member for Employee count
