@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Employee.h" // Includes all necessary class declarations
+#include "employee.h" // Includes all necessary class declarations
 
 int main() {
     // Create an Employee object
