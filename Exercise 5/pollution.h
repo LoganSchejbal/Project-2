@@ -1,45 +1,40 @@
 #pragma once
-#include <iostream>
 #include <string>
-using namespace std;
 
-class carbonFootrprint {
-    public:
-    int getCarbonFootprint() const {
-        return 0;
-    }
+class CarbonFootprint {
+public:
+    virtual int getCarbonFootprint() const = 0; // pure virtual
+    virtual ~CarbonFootprint() {} // virtual destructor
 };
 
-class bicycle : public carbonFootrprint {
-    private:
-    int rideLength; // miles (65 calories/mi) = GRAMS
-    char diet; //plant (cal x 1) meat (cal x 5)
+class Bicycle : public CarbonFootprint {
+private:
+    int rideLength; // miles (65 calories/mi)
+    char diet;       // 'p' plant-based, 'm' meat-based
 
-    public:
-    bicycle();
-    bicycle(int, char);
-    virtual int getCarbonFootprint() const;
-};
-class building : public carbonFootrprint {
-    private:
-    int electricUsage; //KWH x 0.39 + KILOGRAMS
-    int gasUsage; //Cubic meter x 0.0544 KILOGRAMS
-    int waterUsage; //Gallons x 0.002 = KILOGRAMS
-
-    public:
-    building();
-    building(int, int, int);
+public:
+    Bicycle(int, char);
     virtual int getCarbonFootprint() const;
 };
 
-class car : public carbonFootrprint {
-    private:
-    float fuelEconomy;
+class Building : public CarbonFootprint {
+private:
+    int electricUsage; // KWH
+    int gasUsage;      // cubic meters
+    int waterUsage;    // cubic meters
+
+public:
+    Building(int, int, int);
+    virtual int getCarbonFootprint() const;
+};
+
+class Car : public CarbonFootprint {
+private:
+    float fuelEconomy; // MPG
     int miles;
-    char fuel; //Gas ((miles/mpg)x8.89) Diesel ((miles/mpg)x10.16) = KILOGRAMS
+    char fuel;          // 'g' gasoline, 'd' diesel
 
-    public:
-    car();
-    car(float, int, char);
+public:
+    Car(float, int, char);
     virtual int getCarbonFootprint() const;
 };
