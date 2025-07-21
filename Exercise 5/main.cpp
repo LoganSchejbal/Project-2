@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     int rideLength = 0;
     while (true){
-        cout << "Please Enter the ride lenght of the bike ride in miles: ";
+        cout << "Please enter the length of the bike ride in miles: ";
         cin >> rideLength;
         if (rideLength == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -19,7 +19,7 @@ int main() {
 
     char diet;
     while (true){
-        cout << "Please enter 'p' for a plant-based diet and a 'm' for a meat-based diet: ";
+        cout << "Please enter 'p' for a plant-based diet or 'm' for a meat-based diet: ";
         cin >> diet;
         if (diet == 'p' || diet == 'm'){
             break;
@@ -32,7 +32,7 @@ int main() {
     //building
     int electricityUsage = 0;
     while (true){
-                cout << "Please Enter the electricity usage of the building in KWH: ";
+                cout << "Please enter the electricity usage of the building in KWH: ";
         cin >> electricityUsage;
         if (electricityUsage == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -44,7 +44,7 @@ int main() {
 
     int gasUsage = 0;
     while (true){
-                cout << "Please Enter the gas usage of the building in cubic meters: ";
+                cout << "Please enter the gas usage of the building in cubic meters: ";
         cin >> gasUsage;
         if (gasUsage == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -56,7 +56,7 @@ int main() {
 
     int waterUsage = 0;
     while (true){
-                cout << "Please Enter the water usage of the building in cubic meters: ";
+                cout << "Please enter the water usage of the building in cubic meters: ";
         cin >> waterUsage;
         if (waterUsage == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -69,7 +69,7 @@ int main() {
     //car
     float fuelEconomy = 0;
     while (true){
-                cout << "Please Enter the Mileage per Gallon of the car: ";
+                cout << "Please enter the mileage per gallon of the car: ";
         cin >> fuelEconomy;
         if (fuelEconomy == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -81,7 +81,7 @@ int main() {
 
     int miles = 0;
     while (true){
-                cout << "Please Enter the miles travelled in the car: ";
+                cout << "Please enter the miles travelled in the car: ";
         cin >> miles;
         if (miles == 0){
             cout << "Input must be a number greater than 0" << endl;
