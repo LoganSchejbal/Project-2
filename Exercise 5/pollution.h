@@ -3,6 +3,13 @@
 #include <string>
 using namespace std;
 
+class carbonFootrprint {
+    public:
+    int getCarbonFootprint() const {
+        return 0;
+    }
+};
+
 class bicycle : public carbonFootrprint {
     private:
     int rideLength; // miles (65 calories/mi) = GRAMS
@@ -11,8 +18,8 @@ class bicycle : public carbonFootrprint {
     public:
     bicycle();
     bicycle(int, char);
+    virtual int getCarbonFootprint() const;
 };
-
 class building : public carbonFootrprint {
     private:
     int electricUsage; //KWH x 0.39 + KILOGRAMS
@@ -22,6 +29,7 @@ class building : public carbonFootrprint {
     public:
     building();
     building(int, int, int);
+    virtual int getCarbonFootprint() const;
 };
 
 class car : public carbonFootrprint {
@@ -33,9 +41,5 @@ class car : public carbonFootrprint {
     public:
     car();
     car(float, int, char);
-};
-
-class carbonFootrprint {
-    public:
-    
+    virtual int getCarbonFootprint() const;
 };

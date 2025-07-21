@@ -114,6 +114,5 @@ int main() {
     objects.push_back(&vehicle);
 
     //calling getCarbonFootprint
-    
 
 }
