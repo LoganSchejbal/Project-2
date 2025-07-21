@@ -219,7 +219,7 @@ public:
 
 // Main
 int main() {
-    ofstream outFile("/Users/josephmirza/Desktop/bank_output.txt"); // Prints output to my desktop
+    ofstream outFile("bank_output.txt");
 
     if (!outFile) {
         cerr << "Error opening output file.\n";
