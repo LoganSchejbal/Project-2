@@ -7,7 +7,7 @@ using namespace std;
 int main() {
     int rideLength = 0;
     while (true){
-        cout << "Please Enter the ride length of the bike ride in miles: ";
+        cout << "Please Enter the ride lenght of the bike ride in miles: ";
         cin >> rideLength;
         if (rideLength == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -29,10 +29,10 @@ int main() {
         }
     }
 
-    // Building
+    //building
     int electricityUsage = 0;
     while (true){
-        cout << "Please Enter the electricity usage of the building in KWH: ";
+                cout << "Please Enter the electricity usage of the building in KWH: ";
         cin >> electricityUsage;
         if (electricityUsage == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -44,7 +44,7 @@ int main() {
 
     int gasUsage = 0;
     while (true){
-        cout << "Please Enter the gas usage of the building in cubic meters: ";
+                cout << "Please Enter the gas usage of the building in cubic meters: ";
         cin >> gasUsage;
         if (gasUsage == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -56,7 +56,7 @@ int main() {
 
     int waterUsage = 0;
     while (true){
-        cout << "Please Enter the water usage of the building in cubic meters: ";
+                cout << "Please Enter the water usage of the building in cubic meters: ";
         cin >> waterUsage;
         if (waterUsage == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -66,10 +66,10 @@ int main() {
         }
     }
 
-    // Car
+    //car
     float fuelEconomy = 0;
     while (true){
-        cout << "Please Enter the Mileage per Gallon of the car: ";
+                cout << "Please Enter the Mileage per Gallon of the car: ";
         cin >> fuelEconomy;
         if (fuelEconomy == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -81,7 +81,7 @@ int main() {
 
     int miles = 0;
     while (true){
-        cout << "Please Enter the miles travelled in the car: ";
+                cout << "Please Enter the miles travelled in the car: ";
         cin >> miles;
         if (miles == 0){
             cout << "Input must be a number greater than 0" << endl;
@@ -103,23 +103,19 @@ int main() {
         }
     }
 
-    // Creating objects and storing
-    Bicycle bike(rideLength, diet);
-    Building structure(electricityUsage, gasUsage, waterUsage);
-    Car vehicle(fuelEconomy, miles, fuel);
+    //Creating objects and storing
+    Bicycle bike (rideLength, diet);
+    Building structure (electricityUsage, gasUsage, waterUsage);
+    Car vehicle (fuelEconomy, miles, fuel);
 
     vector <CarbonFootprint*> objects;
     objects.push_back(&bike);
     objects.push_back(&structure);
     objects.push_back(&vehicle);
 
-    // Calling getCarbonFootprint
-    cout << "\n🌍 Carbon Footprint Report 🌍" << endl;
-    cout << "-----------------------------" << endl;
-    for (auto ptr : objects) {
-        ptr->printInfo();
-        cout << "Estimated Carbon Footprint: " 
-             << ptr->getCarbonFootprint() << " metric tons CO2/year" << endl << endl;
+    //calling getCarbonFootprint
+    for (auto obj : objects) {
+        obj->getCarbonFootprint(); // polymorphic call
     }
 
     return 0;
